@@ -1,0 +1,43 @@
+{
+  "set": "eval_set_02_prefix",
+  "exp": "perceiver_ar",
+  "step": 9800,
+  "model": "perceiver_ar",
+  "family": "token",
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "gen_steps": 600,
+  "grammar_prob_mass": 0.0009974787252177897,
+  "pieces": [
+    {
+      "id": "eval02_sample00",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 307,
+      "gen_density": 0.5116666666666667,
+      "gen_mean_poly": 1.3063829787234043,
+      "gen_distinct_pitch": 63,
+      "gen_repeat8": 0.0
+    },
+    {
+      "id": "eval02_sample01",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 304,
+      "gen_density": 0.5066666666666667,
+      "gen_mean_poly": 1.7078651685393258,
+      "gen_distinct_pitch": 62,
+      "gen_repeat8": 0.0202360876897133
+    },
+    {
+      "id": "eval02_sample02",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 132,
+      "gen_density": 0.22,
+      "gen_mean_poly": 1.3608247422680413,
+      "gen_distinct_pitch": 53,
+      "gen_repeat8": 0.23777403035413158
+    }
+  ]
+}

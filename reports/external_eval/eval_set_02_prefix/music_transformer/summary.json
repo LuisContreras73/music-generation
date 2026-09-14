@@ -7,37 +7,37 @@
   "temperature": 1.0,
   "top_p": 0.95,
   "gen_steps": 600,
-  "grammar_prob_mass": 0.0016448191101725883,
+  "grammar_prob_mass": 0.0010607128756507562,
   "pieces": [
     {
       "id": "eval02_sample00",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 634,
-      "gen_density": 1.0566666666666666,
-      "gen_mean_poly": 2.8430493273542603,
-      "gen_distinct_pitch": 52,
-      "gen_repeat8": 0.46374367622259693
+      "gen_onsets": 179,
+      "gen_density": 0.29833333333333334,
+      "gen_mean_poly": 1.098159509202454,
+      "gen_distinct_pitch": 62,
+      "gen_repeat8": 0.25463743676222594
     },
     {
       "id": "eval02_sample01",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 318,
-      "gen_density": 0.53,
-      "gen_mean_poly": 2.0254777070063694,
-      "gen_distinct_pitch": 41,
-      "gen_repeat8": 0.013490725126475533
+      "gen_onsets": 306,
+      "gen_density": 0.51,
+      "gen_mean_poly": 1.4641148325358853,
+      "gen_distinct_pitch": 76,
+      "gen_repeat8": 0.001686340640809414
     },
     {
       "id": "eval02_sample02",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 107,
-      "gen_density": 0.17833333333333334,
-      "gen_mean_poly": 1.5070422535211268,
-      "gen_distinct_pitch": 22,
-      "gen_repeat8": 0.4974704890387859
+      "gen_onsets": 102,
+      "gen_density": 0.17,
+      "gen_mean_poly": 1.0736842105263158,
+      "gen_distinct_pitch": 39,
+      "gen_repeat8": 0.3389544688026982
     }
   ]
 }

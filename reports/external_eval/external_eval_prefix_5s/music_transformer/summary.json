@@ -7,57 +7,57 @@
   "temperature": 1.0,
   "top_p": 0.95,
   "gen_steps": 600,
-  "grammar_prob_mass": 0.0005985386088865283,
+  "grammar_prob_mass": 0.0005801730347493823,
   "pieces": [
     {
       "id": "ode_to_joy",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 142,
-      "gen_density": 0.23666666666666666,
-      "gen_mean_poly": 1.9189189189189189,
-      "gen_distinct_pitch": 15,
-      "gen_repeat8": 0.4401349072512648
+      "gen_onsets": 106,
+      "gen_density": 0.17666666666666667,
+      "gen_mean_poly": 1.127659574468085,
+      "gen_distinct_pitch": 47,
+      "gen_repeat8": 0.2580101180438449
     },
     {
       "id": "twinkle_twinkle",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 138,
-      "gen_density": 0.23,
-      "gen_mean_poly": 1.725,
-      "gen_distinct_pitch": 17,
-      "gen_repeat8": 0.45531197301854975
+      "gen_onsets": 96,
+      "gen_density": 0.16,
+      "gen_mean_poly": 1.2,
+      "gen_distinct_pitch": 41,
+      "gen_repeat8": 0.3406408094435076
     },
     {
       "id": "mary_had_a_little_lamb",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 75,
-      "gen_density": 0.125,
-      "gen_mean_poly": 1.2096774193548387,
-      "gen_distinct_pitch": 16,
-      "gen_repeat8": 0.6964586846543002
+      "gen_onsets": 80,
+      "gen_density": 0.13333333333333333,
+      "gen_mean_poly": 1.1940298507462686,
+      "gen_distinct_pitch": 29,
+      "gen_repeat8": 0.45699831365935917
     },
     {
       "id": "frere_jacques",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 132,
-      "gen_density": 0.22,
-      "gen_mean_poly": 2.1639344262295084,
-      "gen_distinct_pitch": 10,
-      "gen_repeat8": 0.7217537942664418
+      "gen_onsets": 188,
+      "gen_density": 0.31333333333333335,
+      "gen_mean_poly": 1.0273224043715847,
+      "gen_distinct_pitch": 61,
+      "gen_repeat8": 0.08937605396290049
     },
     {
       "id": "greensleeves",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 65,
-      "gen_density": 0.10833333333333334,
-      "gen_mean_poly": 1.015625,
-      "gen_distinct_pitch": 9,
-      "gen_repeat8": 0.8414839797639123
+      "gen_onsets": 223,
+      "gen_density": 0.37166666666666665,
+      "gen_mean_poly": 1.1861702127659575,
+      "gen_distinct_pitch": 55,
+      "gen_repeat8": 0.07757166947723437
     }
   ]
 }

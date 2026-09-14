@@ -7,57 +7,57 @@
   "temperature": 1.0,
   "top_p": 0.95,
   "gen_steps": 600,
-  "grammar_prob_mass": 0.0002112339534323366,
+  "grammar_prob_mass": 0.00022058862396108492,
   "pieces": [
     {
       "id": "ode_to_joy",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 114,
-      "gen_density": 0.19,
-      "gen_mean_poly": 1.6285714285714286,
-      "gen_distinct_pitch": 12,
-      "gen_repeat8": 0.5328836424957841
+      "gen_onsets": 58,
+      "gen_density": 0.09666666666666666,
+      "gen_mean_poly": 1.0740740740740742,
+      "gen_distinct_pitch": 29,
+      "gen_repeat8": 0.5868465430016863
     },
     {
       "id": "twinkle_twinkle",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 110,
-      "gen_density": 0.18333333333333332,
-      "gen_mean_poly": 1.4285714285714286,
-      "gen_distinct_pitch": 14,
-      "gen_repeat8": 0.49578414839797635
+      "gen_onsets": 98,
+      "gen_density": 0.16333333333333333,
+      "gen_mean_poly": 1.101123595505618,
+      "gen_distinct_pitch": 41,
+      "gen_repeat8": 0.28330522765598654
     },
     {
       "id": "mary_had_a_little_lamb",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 66,
-      "gen_density": 0.11,
-      "gen_mean_poly": 1.0476190476190477,
-      "gen_distinct_pitch": 11,
-      "gen_repeat8": 0.7925801011804384
+      "gen_onsets": 89,
+      "gen_density": 0.14833333333333334,
+      "gen_mean_poly": 1.155844155844156,
+      "gen_distinct_pitch": 38,
+      "gen_repeat8": 0.4401349072512648
     },
     {
       "id": "frere_jacques",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 109,
-      "gen_density": 0.18166666666666667,
-      "gen_mean_poly": 1.6515151515151516,
-      "gen_distinct_pitch": 14,
-      "gen_repeat8": 0.5143338954468804
+      "gen_onsets": 87,
+      "gen_density": 0.145,
+      "gen_mean_poly": 1.2428571428571429,
+      "gen_distinct_pitch": 39,
+      "gen_repeat8": 0.3608768971332209
     },
     {
       "id": "greensleeves",
       "prefix_steps": 100,
       "gen_steps": 600,
-      "gen_onsets": 117,
-      "gen_density": 0.195,
-      "gen_mean_poly": 1.125,
-      "gen_distinct_pitch": 11,
-      "gen_repeat8": 0.7335581787521079
+      "gen_onsets": 108,
+      "gen_density": 0.18,
+      "gen_mean_poly": 1.4210526315789473,
+      "gen_distinct_pitch": 34,
+      "gen_repeat8": 0.3676222596964587
     }
   ]
 }

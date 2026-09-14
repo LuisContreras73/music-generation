@@ -52,7 +52,7 @@ el contexto, 1024 frente a 2048. Resultado: 1.5815 → 1.5172 bits/paso, pero 74
 ## Puesta en marcha
 
 ```bash
-git clone https://github.com/<usuario>/music-generation.git
+git clone https://github.com/LuisContreras73/music-generation.git
 cd music-generation
 
 # torch con CUDA (elige la build de tu GPU en https://pytorch.org/get-started/locally/)
