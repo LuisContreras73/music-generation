@@ -1,0 +1,85 @@
+{
+  "winner": "estilo_llama_ctx2048_24ep",
+  "model": "modern",
+  "family": "token",
+  "metric": "val_bpt",
+  "metric_column": "best_val_bpt",
+  "lower_is_better": true,
+  "value": 1.5172095135592136,
+  "params_M": 25.779,
+  "best_gen_score": 79.27875732061068,
+  "best_val_bpt": 1.5172095135592136,
+  "best_val_ppl": 4.497480661433209,
+  "frame_f1": null,
+  "steps": 23800,
+  "train_hours": 1.95262691588889,
+  "experiment_updated": "2026-09-13T15:45:26-05:00",
+  "runner_up": "estilo_llama_24ep",
+  "runner_up_value": 1.5815481552180224,
+  "margin": -0.06433864165880876,
+  "n_experiments": 14,
+  "source_checkpoint": "experiments/estilo_llama_ctx2048_24ep/checkpoints/best_gen.pt",
+  "source_dir": "experiments/estilo_llama_ctx2048_24ep",
+  "files": [
+    "BEST.md",
+    "best.json",
+    "best_checkpoint.pt",
+    "config.json",
+    "distributions.png",
+    "generation_01_generation_best.png",
+    "generation_02_generation_grid.png",
+    "metrics.csv",
+    "summary.json",
+    "training_curves.png"
+  ],
+  "copied": {
+    "best_checkpoint.pt": [
+      "experiments/estilo_llama_ctx2048_24ep/checkpoints/best_gen.pt",
+      103154337,
+      1789334092653362300
+    ],
+    "metrics.csv": [
+      "experiments/estilo_llama_ctx2048_24ep/logs/metrics.csv",
+      78217,
+      1789332326645636800
+    ],
+    "training_curves.png": [
+      "experiments/estilo_llama_ctx2048_24ep/figures/training_curves.png",
+      253965,
+      1789332196867005300
+    ],
+    "config.json": [
+      "experiments/estilo_llama_ctx2048_24ep/config.json",
+      1297,
+      1789334347844173200
+    ],
+    "summary.json": [
+      "experiments/estilo_llama_ctx2048_24ep/logs/summary.json",
+      3537,
+      1789334347851646400
+    ],
+    "distributions.png": [
+      "experiments/estilo_llama_ctx2048_24ep/figures/distributions.png",
+      220907,
+      1789332326574819400
+    ],
+    "generation_01_generation_best.png": [
+      "experiments/estilo_llama_ctx2048_24ep/figures/generation_best.png",
+      53002,
+      1789332326641132600
+    ],
+    "generation_02_generation_grid.png": [
+      "experiments/estilo_llama_ctx2048_24ep/figures/generation_grid.png",
+      97390,
+      1789332326026783400
+    ]
+  },
+  "reused": [],
+  "missing": [],
+  "removed_from_previous": [
+    "BEST.md",
+    "best.json"
+  ],
+  "promoted_at": "2026-09-13T18:55:29-05:00",
+  "ok": true
+}

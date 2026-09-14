@@ -1,0 +1,54 @@
+# ---------------------------------------------------------------- datos
+# El corpus crudo no se redistribuye. Lo que si va al repositorio es el corpus
+# ya tokenizado (data/processed/tokens.bin, 34 MB) y los JSON de metadatos, que
+# son lo que necesitan la inferencia y el gen_score calibrado.
+train.npz
+data/raw/
+# 540 MB; solo hace falta para reconstruir el audio del corpus real
+data/processed/rolls_packed.bin
+data/processed/*.memmap
+
+# ------------------------------------------------------------ checkpoints
+# Los pesos van como assets de una Release, no en el arbol de git: cada best.pt
+# ronda los 90-100 MB y GitHub bloquea ficheros de mas de 100 MB.
+experiments/*/checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# ------------------------------------------------ salidas de entrenamiento
+# Se regeneran ejecutando el pipeline; abultan y no aportan al que clona.
+experiments/*/generations/
+experiments/*/logs/entrenamiento*.log
+experiments/*/logs/entrenamiento*.err
+experiments/cola.log
+
+# --------------------------------------------------------------- reportes
+# Se conservan las tablas, las figuras y una muestra de audio (ver README);
+# el resto del audio pesa cientos de MB y se regenera con los scripts.
+reports/audio/**/*.npz
+reports/external_eval/**/*.npz
+reports/best/best_checkpoint.pt
+
+# ------------------------------------------------------------------ python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ----------------------------------------------------------------- sistema
+.DS_Store
+Thumbs.db
+*.tmp
+
+# ------------------------------------------------------------------ audio
+# Los WAV son ~290 MB (117 ficheros de 2.5 MB). Se excluyen y se conserva:
+#   * TODOS los .mid, que pesan 2-8 KB y son el artefacto simbolico util
+#   * los .png de piano-roll
+#   * una muestra de WAV: la generacion libre de cada modelo, para poder
+#     escuchar algo sin ejecutar nada
+# Para regenerar el resto: scripts/11_audio_gallery.py y scripts/20_generacion_libre.py
+*.wav
+!reports/audio/3_generacion_libre/*/desde_cero_s1.wav
+!reports/audio/0_referencia_corpus/*.wav

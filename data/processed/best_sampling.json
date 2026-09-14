@@ -1,0 +1,9 @@
+{
+ "temperature": 1.15,
+ "penalty": 1.5,
+ "penalty_window": 384,
+ "exclude_shift": true,
+ "ngram": 3,
+ "typical": 0.92,
+ "min_p": 0.02
+}

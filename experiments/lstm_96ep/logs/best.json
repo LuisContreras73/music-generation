@@ -1,0 +1,26 @@
+{
+  "best_val_bpt": 1.995105717228859,
+  "best_val_bpt_step": 7500,
+  "best_val_bpt_metrics": {
+    "step": 7500,
+    "split": "eval",
+    "tokens_seen": 184320000,
+    "time_s": 1163.2360503673553,
+    "lr": 0.0009931972711852114,
+    "train_loss": 2.051214828491211,
+    "val_nll": 1.99167084259331,
+    "val_ppl": 7.32776708484461,
+    "val_bpt": 1.995105717228859,
+    "val_token_acc": 0.4249339923945954,
+    "val_n_tokens": 361322,
+    "val_n_steps": 520380,
+    "val_loss": 1.99167084259331
+  },
+  "best_val_bpt_time": "2026-09-14T00:46:18-05:00",
+  "name": "lstm_96ep",
+  "model": "lstm",
+  "family": "token",
+  "n_params": 23698075,
+  "last_step": 7500,
+  "updated": "2026-09-14T00:46:18-05:00"
+}

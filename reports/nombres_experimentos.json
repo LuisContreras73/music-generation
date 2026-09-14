@@ -1,0 +1,25 @@
+{
+  "mapa": {
+    "mt_base": "music_transformer",
+    "mt_norel": "ablacion_sin_atencion_relativa",
+    "mt_aug": "music_transformer_con_augmentacion",
+    "mt_long": "music_transformer_ctx2048",
+    "modern_gpu": "estilo_llama_10ep",
+    "modern_max": "estilo_llama_24ep",
+    "modern_long_max": "estilo_llama_ctx2048_10ep",
+    "modern_long_24": "estilo_llama_ctx2048_24ep",
+    "transformer_moderno_10ep": "estilo_llama_10ep",
+    "transformer_moderno_24ep": "estilo_llama_24ep",
+    "transformer_moderno_ctx2048_10ep": "estilo_llama_ctx2048_10ep",
+    "transformer_moderno_ctx2048_24ep": "estilo_llama_ctx2048_24ep",
+    "lstm_base": "lstm",
+    "deep_lstm_aug": "deep_lstm",
+    "melle_base": "melle",
+    "melle_noflux": "ablacion_melle_sin_flux",
+    "tft_base": "tft"
+  },
+  "aplicado_ahora": {
+    "perceiver_ar": "perceiver_ar"
+  },
+  "nota": "nombre de trabajo -> nombre final; para revertir, invertir el mapa"
+}

@@ -1,0 +1,43 @@
+{
+  "set": "eval_set_02_prefix",
+  "exp": "estilo_llama_10ep",
+  "step": 9800,
+  "model": "modern",
+  "family": "token",
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "gen_steps": 600,
+  "grammar_prob_mass": 0.001667516993144308,
+  "pieces": [
+    {
+      "id": "eval02_sample00",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 345,
+      "gen_density": 0.575,
+      "gen_mean_poly": 1.2683823529411764,
+      "gen_distinct_pitch": 82,
+      "gen_repeat8": 0.0
+    },
+    {
+      "id": "eval02_sample01",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 329,
+      "gen_density": 0.5483333333333333,
+      "gen_mean_poly": 1.7880434782608696,
+      "gen_distinct_pitch": 81,
+      "gen_repeat8": 0.08431703204047214
+    },
+    {
+      "id": "eval02_sample02",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 134,
+      "gen_density": 0.22333333333333333,
+      "gen_mean_poly": 1.4565217391304348,
+      "gen_distinct_pitch": 56,
+      "gen_repeat8": 0.23102866779089382
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "set": "external_eval_prefix_5s",
+  "exp": "music_transformer_con_augmentacion",
+  "step": 7300,
+  "model": "music_transformer",
+  "family": "token",
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "gen_steps": 600,
+  "grammar_prob_mass": 0.0016239630038601244,
+  "pieces": [
+    {
+      "id": "ode_to_joy",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 60,
+      "gen_density": 0.1,
+      "gen_mean_poly": 1.0,
+      "gen_distinct_pitch": 5,
+      "gen_repeat8": 0.9308600337268128
+    },
+    {
+      "id": "twinkle_twinkle",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 62,
+      "gen_density": 0.10333333333333333,
+      "gen_mean_poly": 1.0689655172413792,
+      "gen_distinct_pitch": 10,
+      "gen_repeat8": 0.8229342327150084
+    },
+    {
+      "id": "mary_had_a_little_lamb",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 67,
+      "gen_density": 0.11166666666666666,
+      "gen_mean_poly": 1.0151515151515151,
+      "gen_distinct_pitch": 14,
+      "gen_repeat8": 0.7537942664418212
+    },
+    {
+      "id": "frere_jacques",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 64,
+      "gen_density": 0.10666666666666667,
+      "gen_mean_poly": 1.032258064516129,
+      "gen_distinct_pitch": 12,
+      "gen_repeat8": 0.8684654300168634
+    },
+    {
+      "id": "greensleeves",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 68,
+      "gen_density": 0.11333333333333333,
+      "gen_mean_poly": 1.0303030303030303,
+      "gen_distinct_pitch": 15,
+      "gen_repeat8": 0.7824620573355818
+    }
+  ]
+}

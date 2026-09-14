@@ -1,0 +1,21 @@
+{
+  "vocab_size": 155,
+  "n_seq": 10604,
+  "n_tokens_total": 35870033,
+  "tokens_per_split": {
+    "test": 1799498,
+    "val": 1825492,
+    "train": 32245043
+  },
+  "steps_per_split": {
+    "test": 2593634,
+    "val": 2594616,
+    "train": 46267840
+  },
+  "n_seq_per_split": {
+    "test": 530,
+    "val": 530,
+    "train": 9544
+  },
+  "tokens_per_step": 0.6970998573735393
+}

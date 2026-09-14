@@ -1,0 +1,43 @@
+{
+  "set": "eval_set_02_prefix",
+  "exp": "lstm",
+  "step": 4900,
+  "model": "lstm",
+  "family": "token",
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "gen_steps": 600,
+  "grammar_prob_mass": 0.001768881664037339,
+  "pieces": [
+    {
+      "id": "eval02_sample00",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 358,
+      "gen_density": 0.5966666666666667,
+      "gen_mean_poly": 1.543103448275862,
+      "gen_distinct_pitch": 45,
+      "gen_repeat8": 0.05564924114671166
+    },
+    {
+      "id": "eval02_sample01",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 929,
+      "gen_density": 1.5483333333333333,
+      "gen_mean_poly": 3.1385135135135136,
+      "gen_distinct_pitch": 48,
+      "gen_repeat8": 0.18212478920741992
+    },
+    {
+      "id": "eval02_sample02",
+      "prefix_steps": 100,
+      "gen_steps": 600,
+      "gen_onsets": 92,
+      "gen_density": 0.15333333333333332,
+      "gen_mean_poly": 1.4603174603174602,
+      "gen_distinct_pitch": 33,
+      "gen_repeat8": 0.46374367622259693
+    }
+  ]
+}

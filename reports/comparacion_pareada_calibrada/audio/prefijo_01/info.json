@@ -1,0 +1,9 @@
+{
+  "pieza": 8085,
+  "split": "test",
+  "prefijo_pasos": 93,
+  "prefijo_segundos": 4.7,
+  "semilla_prefijos": 2024,
+  "semilla_muestreo": 1,
+  "nota": "todas las pistas comparten prefijo y ganancia; REAL es la pieza original"
+}

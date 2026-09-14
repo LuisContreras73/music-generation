@@ -1,0 +1,5 @@
+# Probado con Python 3.14 en Windows 11 + RTX 4070 SUPER (12 GB).
+# torch se instala aparte para elegir la build de CUDA correcta; ver el README.
+numpy>=1.26
+pandas>=2.0
+matplotlib>=3.8

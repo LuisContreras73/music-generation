@@ -1,0 +1,24 @@
+{
+  "exp": "ablacion_melle_sin_flux",
+  "step": 4200,
+  "flux_weight": 0.0,
+  "kl_weight": 0.001,
+  "tf_expected_per_frame": 0.9218730108078047,
+  "tf_real_per_frame": 0.4621961351880143,
+  "gen_per_step": 4.403125,
+  "real_per_step": 0.45255512029771405,
+  "factor_calibracion": 1.9945493711945492,
+  "factor_realimentacion": 4.776281492547111,
+  "factor_total": 9.526529247608003,
+  "crecimiento_tramos": 1.7749307479224377,
+  "per_step_por_tramo": [
+    2.4066666666666667,
+    4.765000000000001,
+    5.0,
+    4.905,
+    4.76,
+    4.595,
+    4.5216666666666665,
+    4.2716666666666665
+  ]
+}
