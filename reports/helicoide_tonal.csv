@@ -1,0 +1,4 @@
+exp,grados_por_semitono,desviacion,fraccion_saltos_regulares,error_vs_quintas,radio_cv
+estilo_llama_ctx2048_24ep,-150.1,11.1,1.0,0.1,0.115
+music_transformer,-143.9,77.8,0.851,6.1,0.271
+lstm,120.6,124.0,0.471,270.6,0.283

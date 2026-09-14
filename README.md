@@ -10,6 +10,45 @@ y lo que cada uno **genera** — que resultan no ser lo mismo.
 
 ---
 
+<div align="center">
+
+<img src="reports/figures/helicoide_tonal.gif" width="440" alt="el helicoide tonal aprendido por el modelo">
+
+### El modelo descubrió el círculo de quintas sin que nadie se lo enseñara
+
+Los 88 vectores que el modelo aprende para las notas no caen de cualquier manera. Se colocan
+en **doce columnas separadas 30° exactos**, y el orden alrededor del círculo no es el del
+teclado: es **Do · Sol · Re · La · Mi · Si · Fa# · Do# · Sol# · Re# · La# · Fa**, el círculo
+de quintas. La altura es el eje vertical, así que todas las octavas de una misma nota caen en
+la misma columna.
+
+Subir un semitono equivale a girar **−150.1°**. Un paso del círculo de quintas son −150.0°.
+
+Nadie le dio esa información: se entrenó solo para predecir el siguiente símbolo de un
+piano-roll binario, sin velocity, sin duración, sin compás y sin nombres de nota.
+
+| | °/semitono | desviación | saltos regulares |
+|---|---|---|---|
+| `estilo_llama_ctx2048_24ep` | **−150.1** | 11.1° | **100 %** |
+| `music_transformer` | −143.9 | 77.8° | 85 % |
+| `lstm` | +120.6 | 124.0° | 47 % |
+
+<div align="center">
+<img src="reports/figures/helicoide_tonal.png" width="94%" alt="quién aprende el círculo de quintas">
+</div>
+
+El estadístico busca la mejor de 8 componentes, lo que lo infla por construcción, así que se
+contrasta con **200 permutaciones** de las filas de embeddings: el azar llega a 0.30
+(percentil 95) y los cinco modelos dan **p = 0.005**, el mínimo alcanzable con 200
+permutaciones. Es la estructura que la psicología de la música describe desde Shepard (1982)
+como hélice de altura.
+
+```bash
+python scripts/23_helicoide_tonal.py       # reproduce la figura y las cifras
+```
+
+---
+
 ## El resultado principal
 
 **Predecir mejor no es generar mejor.** El modelo con mejor verosimilitud es el que peor
