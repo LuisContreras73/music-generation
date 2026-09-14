@@ -127,7 +127,7 @@ class FrameWindows(Dataset):
     @property
     def packed(self):
         if self._packed is None:
-            self._packed = np.memmap(PROC / "rolls_packed.bin", dtype=np.uint8,
+            self._packed = np.memmap(exigir_rolls(), dtype=np.uint8,
                                      mode="r").reshape(-1, 11)
         return self._packed
 
@@ -155,11 +155,33 @@ class FrameWindows(Dataset):
         return x[:-1].contiguous(), x[1:].contiguous(), mk[1:].contiguous()
 
 
+def exigir_rolls() -> Path:
+    """Ruta de rolls_packed.bin, con un mensaje util si no esta.
+
+    No se distribuye en el repositorio: son 540 MB y solo hacen falta para
+    reconstruir el piano-roll de una pieza REAL del corpus. Sin el fichero, la
+    inferencia desde .npz de prefijos y la generacion libre funcionan igual, asi
+    que conviene decir exactamente que se pierde y como recuperarlo, en vez de
+    dejar que numpy lance un FileNotFoundError crudo.
+    """
+    p = PROC / "rolls_packed.bin"
+    if not p.exists():
+        raise FileNotFoundError(
+            "falta %s (540 MB), que NO se distribuye en el repositorio.\n"
+            "  Lo necesitan: --corpus en scripts/infer.py, la galeria de audio y\n"
+            "  cualquier comparacion contra el corpus real.\n"
+            "  NO lo necesitan: --scratch, --npz, la evaluacion externa ni la\n"
+            "  comparacion pareada, que funcionan con tokens.bin.\n"
+            "  Para regenerarlo desde el dataset original: python scripts/01_prepare.py"
+            % p)
+    return p
+
+
 def get_roll(seq_index: int) -> np.ndarray:
     """Piano-roll completo [T,88] de una pieza por indice global."""
     m, _ = load_meta()
     rl = m["roll_lens"].astype(np.int64); off = np.r_[0, np.cumsum(rl)]
-    packed = np.memmap(PROC / "rolls_packed.bin", dtype=np.uint8, mode="r").reshape(-1, 11)
+    packed = np.memmap(exigir_rolls(), dtype=np.uint8, mode="r").reshape(-1, 11)
     a, ln = int(off[seq_index]), int(rl[seq_index])
     return np.unpackbits(np.asarray(packed[a:a + ln]), axis=1)[:, :N_PITCH]
 
