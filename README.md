@@ -1,5 +1,8 @@
 # Music Generation
 
+[![pesos en Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-pesos-yellow)](https://huggingface.co/LuisContreras73/music-generation)
+[![release](https://img.shields.io/badge/GitHub-Release%20v1.0-blue)](https://github.com/LuisContreras73/music-generation/releases/tag/v1.0)
+
 Modelos autorregresivos generativos sobre música simbólica de piano. Se entrenan y se
 comparan **16 experimentos** de cuatro familias de arquitectura sobre el mismo corpus, la
 misma tokenización y el mismo protocolo, y se mide separadamente lo que cada uno **predice**
@@ -64,14 +67,41 @@ Funciona en CPU, pero la generación es entre 10 y 50 veces más lenta.
 
 ### Descargar los pesos
 
-Los checkpoints **no están en el árbol de git** (cada uno ronda los 90-100 MB): van como
-assets de la [Release más reciente](../../releases/latest). Descárgalos y colócalos así:
+Los checkpoints **no están en el árbol de git**, porque GitHub bloquea ficheros de más de
+100 MB y cada uno pesa entre 91 y 98 MB. Están publicados en dos sitios, con el mismo
+contenido; elige el que prefieras.
 
-```
-experiments/<nombre_del_modelo>/checkpoints/best.pt
+**Hugging Face** (recomendado: descarga selectiva, con caché y reanudación)
+
+```bash
+pip install huggingface_hub
+python -c "
+from huggingface_hub import hf_hub_download
+import shutil, pathlib
+for m in ['lstm', 'music_transformer', 'estilo_llama_ctx2048_24ep']:
+    p = hf_hub_download('LuisContreras73/music-generation', f'{m}/best.pt')
+    d = pathlib.Path('experiments')/m/'checkpoints'; d.mkdir(parents=True, exist_ok=True)
+    shutil.copy(p, d/'best.pt'); print('listo:', m)
+"
 ```
 
-Por ejemplo, `lstm_best.pt` de la Release va a `experiments/lstm/checkpoints/best.pt`.
+👉 https://huggingface.co/LuisContreras73/music-generation — incluye además un WAV de cada
+modelo componiendo desde cero, para escuchar sin instalar nada.
+
+**Release de GitHub** (sin dependencias, solo `curl`)
+
+```bash
+mkdir -p experiments/lstm/checkpoints
+curl -L -o experiments/lstm/checkpoints/best.pt   https://github.com/LuisContreras73/music-generation/releases/download/v1.0/lstm_best.pt
+```
+
+En los dos casos la regla es la misma: el fichero va a
+`experiments/<nombre_del_modelo>/checkpoints/best.pt`.
+
+Publicados: `lstm`, `music_transformer`, `estilo_llama_ctx2048_24ep`, `estilo_llama_24ep` y
+`perceiver_ar`. De cada experimento se publica `best.pt`, el de menor `val_bpt`; no se
+publican `best_gen.pt` (elegido por una métrica ruidosa) ni `last.pt` (309 MB, solo sirve
+para reanudar el entrenamiento).
 
 ---
 
