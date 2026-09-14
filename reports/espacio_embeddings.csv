@@ -1,6 +1,2 @@
 modelo,comp_duracion,r_duracion,comp_altura,r_altura,comp_cromatica,r_cromatica,comp_quintas,r_quintas,nulo_quintas_p95,p_valor_quintas,separacion_note_shift
 music_transformer,1,0.943,3,0.817,8,0.168,5,0.857,0.299,0.005,0.495
-estilo_llama_ctx2048_24ep,7,0.963,3,0.888,8,0.254,5,0.822,0.3,0.005,0.582
-lstm,4,0.95,3,0.922,1,0.09,6,0.821,0.314,0.005,0.892
-estilo_llama_24ep,7,0.963,3,0.889,8,0.239,5,0.792,0.303,0.005,0.607
-perceiver_ar,2,0.96,3,0.86,8,0.28,6,0.732,0.3,0.005,0.606

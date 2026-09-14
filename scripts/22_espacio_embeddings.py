@@ -146,9 +146,9 @@ def figuras(exp: str, a: dict, n_frames: int = 90):
         ax.scatter(x[shifts], y[shifts], z[shifts], c=np.arange(1, MAX_SHIFT + 1),
                    cmap="autumn", s=38, marker="^", depthshade=False, edgecolors="none",
                    label="SHIFT (64, color = duracion)")
-        ax.set_xlabel("eje de DURACION\n|r| = %.2f" % a["r_duracion"], fontsize=8, labelpad=-4)
-        ax.set_ylabel("eje de ALTURA\n|r| = %.2f" % a["r_altura"], fontsize=8, labelpad=-4)
-        ax.set_zlabel("3a componente", fontsize=8, labelpad=-4)
+        ax.set_xlabel("duracion del SHIFT", fontsize=8.5, labelpad=2)
+        ax.set_ylabel("altura de la nota", fontsize=8.5, labelpad=2)
+        ax.set_zlabel("3a componente", fontsize=8.5, labelpad=2)
         for f in (ax.set_xticklabels, ax.set_yticklabels, ax.set_zticklabels):
             f([])
 
@@ -157,8 +157,9 @@ def figuras(exp: str, a: dict, n_frames: int = 90):
     ax = fig.add_subplot(111, projection="3d")
     dibuja(ax)
     ax.legend(loc="upper left", fontsize=7.5, framealpha=.9)
-    ax.set_title("Espacio de embeddings de %s\nel modelo separa altura y tiempo sin que nadie se lo diga"
-                 % exp, fontsize=10)
+    ax.set_title("Espacio de embeddings de %s\n"
+                 "el eje de duracion correlaciona %.2f y el de altura %.2f"
+                 % (exp, a["r_duracion"], a["r_altura"]), fontsize=10)
     fig.tight_layout()
 
     def frame(i):
@@ -171,11 +172,12 @@ def figuras(exp: str, a: dict, n_frames: int = 90):
     plt.close(fig)
 
     # --- PNG: la vista 3D y el circulo de quintas ---
-    fig = plt.figure(figsize=(12.5, 5.6))
+    fig = plt.figure(figsize=(13.4, 5.8))
     ax1 = fig.add_subplot(121, projection="3d")
     dibuja(ax1); ax1.view_init(elev=20, azim=42)
     ax1.legend(loc="upper left", fontsize=7.5)
-    ax1.set_title("Los 155 tokens: altura y tiempo en ejes distintos", fontsize=10.5)
+    ax1.set_title("Los 155 tokens: altura y tiempo en ejes distintos\n"
+                  "|r| = %.2f y %.2f" % (a["r_duracion"], a["r_altura"]), fontsize=10.5)
 
     # las dos componentes con mas estructura circular, sobre los NOTE_ON
     Zn = a["Zn"]; q5 = (midi * 7) % 12

@@ -16,6 +16,8 @@ y lo que cada uno **genera** — que resultan no ser lo mismo.
 
 ### El modelo descubrió el círculo de quintas sin que nadie se lo enseñara
 
+</div>
+
 Los 88 vectores que el modelo aprende para las notas no caen de cualquier manera. Se colocan
 en **doce columnas separadas 30° exactos**, y el orden alrededor del círculo no es el del
 teclado: es **Do · Sol · Re · La · Mi · Si · Fa# · Do# · Sol# · Re# · La# · Fa**, el círculo

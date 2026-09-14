@@ -185,24 +185,35 @@ def gif(h, n_frames=120):
 
 
 def png(hs):
-    """Comparacion: quien aprende la helice y quien no."""
+    """Comparacion: quien aprende el circulo de quintas y quien no.
+
+    Sin etiquetas de nota en los paneles: con tres cilindros pequeños se
+    amontonan y no se leen. Los nombres van en el GIF, que es donde la vista
+    cenital las separa. Los subtitulos se colocan con fig.text y no con
+    set_title, porque set_title los mete dentro de la caja del eje 3D y se
+    solapan con el titulo general.
+    """
     import matplotlib; matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    fig = plt.figure(figsize=(4.5 * len(hs), 5.0), facecolor=FONDO)
-    for i, h in enumerate(hs, 1):
-        ax = fig.add_subplot(1, len(hs), i, projection="3d", facecolor=FONDO)
-        _dibuja_helice(ax, h, con_etiquetas=(i == 1), s=34)
+    n = len(hs)
+    fig = plt.figure(figsize=(4.3 * n, 4.3), facecolor=FONDO)
+    for i, h in enumerate(hs):
+        ax = fig.add_subplot(1, n, i + 1, projection="3d", facecolor=FONDO)
+        _dibuja_helice(ax, h, con_etiquetas=False, s=30)
         ax.view_init(elev=14, azim=38)
         limpio = h["fraccion_saltos_regulares"]
         color = "#5ad18f" if limpio > .9 else ("#e8b44a" if limpio > .7 else "#e05b5b")
-        ax.set_title("%s\n%+.1f°/semitono · %.0f%% regulares"
-                     % (h["exp"], h["grados_por_semitono"], 100 * limpio),
-                     color=color, fontsize=9.5, pad=2)
-    fig.text(.5, .965, "¿Quien aprende el circulo de quintas?", color="white",
+        cx = (i + 0.5) / n
+        fig.text(cx, .885, h["exp"], color=color, fontsize=10.5, ha="center", weight="bold")
+        fig.text(cx, .845, "%+.1f°/semitono  ·  %.0f%% de saltos regulares"
+                 % (h["grados_por_semitono"], 100 * limpio),
+                 color=color, fontsize=8.8, ha="center", alpha=.85)
+    fig.text(.5, .955, "¿Quien aprende el circulo de quintas?", color="white",
              fontsize=15, ha="center", weight="bold")
-    fig.text(.5, .028, "cada columna es una clase de altura con todas sus octavas   ·   un semitono son -150°",
-             color="#6b7f95", fontsize=9, ha="center")
-    fig.subplots_adjust(left=-.02, right=1.02, top=.93, bottom=.06, wspace=-.06)
+    fig.text(.5, .035, "cada columna es una clase de altura con todas sus octavas   ·   "
+                       "un paso del circulo de quintas son -150°",
+             color="#6b7f95", fontsize=8.8, ha="center")
+    fig.subplots_adjust(left=-.01, right=1.01, top=.83, bottom=.06, wspace=-.04)
     out = ROOT / "reports" / "figures" / "helicoide_tonal.png"
     fig.savefig(out, dpi=140, facecolor=FONDO); plt.close(fig)
     return out

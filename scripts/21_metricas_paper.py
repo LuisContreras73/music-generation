@@ -106,27 +106,43 @@ def figura(filas, pareada, libre):
     gp = [float(pareada[m]["media"]) for m in modelos]
     gl = [float(libre[m]["gen_score_del_lote"]) if m in libre else float("nan") for m in modelos]
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5.4))
-    ax1.scatter(nll, gp, s=90, c="#1b6ca8", zorder=3, label="prefijo del corpus (pareado)")
-    ax1.scatter(nll, gl, s=90, c="#c1452e", marker="^", zorder=3, label="generacion libre")
-    for x, y, y2, m in zip(nll, gp, gl, modelos):
-        ax1.annotate(m, (x, y), fontsize=7.5, xytext=(4, 5), textcoords="offset points")
-        if y2 == y2:
-            ax1.plot([x, x], [y, y2], color="#999999", lw=.8, zorder=2)
-    ax1.set_xlabel("NLL de validacion (nats/token) -- la metrica del paper\n<- mejor prediccion")
-    ax1.set_ylabel("gen_score")
-    ax1.set_title("Predecir mejor no es generar mejor", fontsize=11)
-    ax1.grid(alpha=.3); ax1.legend(fontsize=8)
+    # Un color por modelo, compartido por los dos paneles, y la leyenda fuera del
+    # area de datos. Antes cada punto llevaba su nombre pegado y con seis modelos
+    # de nombres largos se solapaban unos con otros.
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13.2, 5.6))
+    paleta = plt.get_cmap("tab10")
+    color = {m: paleta(i % 10) for i, m in enumerate(modelos)}
 
-    y = np.arange(len(modelos))
+    for m, xv, yv, y2 in zip(modelos, nll, gp, gl):
+        ax1.plot([xv, xv], [yv, y2], color=color[m], lw=1.1, alpha=.45, zorder=2)
+        ax1.scatter([xv], [yv], s=110, color=color[m], zorder=3)
+        if y2 == y2:
+            ax1.scatter([xv], [y2], s=110, color=color[m], marker="^",
+                        zorder=3, edgecolors="white", linewidths=.6)
+    ax1.set_xlabel("NLL de validacion (nats/token) — la metrica del paper"
+                   "\n← mejor prediccion")
+    ax1.set_ylabel("gen_score")
+    ax1.set_title("Predecir mejor no es generar mejor", fontsize=11.5)
+    ax1.grid(alpha=.3)
+
     orden = np.argsort(gp)[::-1]
-    ax2.barh(y - .2, [gp[i] for i in orden], height=.38, color="#1b6ca8", label="prefijo del corpus")
-    ax2.barh(y + .2, [0 if gl[i] != gl[i] else gl[i] for i in orden], height=.38,
-             color="#c1452e", label="generacion libre")
-    ax2.set_yticks(y); ax2.set_yticklabels([modelos[i] for i in orden], fontsize=8.5)
+    y = np.arange(len(modelos))
+    ax2.barh(y - .2, [gp[i] for i in orden], height=.36,
+             color=[color[modelos[i]] for i in orden])
+    ax2.barh(y + .2, [0 if gl[i] != gl[i] else gl[i] for i in orden], height=.36,
+             color=[color[modelos[i]] for i in orden], alpha=.45, hatch="//")
+    ax2.set_yticks(y); ax2.set_yticklabels([modelos[i] for i in orden], fontsize=9)
     ax2.invert_yaxis(); ax2.set_xlabel("gen_score"); ax2.set_xlim(0, 100)
-    ax2.set_title("El mismo modelo, dos escenarios", fontsize=11)
-    ax2.grid(axis="x", alpha=.3); ax2.legend(fontsize=8)
+    ax2.set_title("El mismo modelo, dos escenarios\n"
+                  "solido = prefijo del corpus  ·  rayado = generacion libre",
+                  fontsize=11.5)
+    ax2.grid(axis="x", alpha=.3)
+    from matplotlib.lines import Line2D
+    ax1.legend(handles=[Line2D([], [], marker="o", ls="", color="#555555", ms=8,
+                               label="prefijo del corpus"),
+                        Line2D([], [], marker="^", ls="", color="#555555", ms=8,
+                               label="generacion libre")],
+               fontsize=8.5, loc="lower left", framealpha=.92)
     fig.tight_layout()
     out = ROOT / "reports" / "figures" / "prediccion_vs_generacion.png"
     out.parent.mkdir(parents=True, exist_ok=True)
