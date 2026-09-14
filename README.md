@@ -190,6 +190,10 @@ python scripts/20_generacion_libre.py
 
 # las métricas en la unidad del paper de Music Transformer (NLL nats/token)
 python scripts/21_metricas_paper.py
+
+# la geometría aprendida: espacio de embeddings y círculo de quintas
+python scripts/22_espacio_embeddings.py --todos
+python scripts/23_helicoide_tonal.py
 ```
 
 ### Cómo se mide
